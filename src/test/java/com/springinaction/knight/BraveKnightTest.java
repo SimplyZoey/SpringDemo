@@ -5,10 +5,10 @@
  */
 package com.springinaction.knight;
 
-import com.springinaction.knight.impl.BraveKnight;
-import com.springinaction.quest.Quest;
-import com.springinaction.quest.impl.SlayDragonQuest;
 import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.io.File;
 
 /**
  * 〈〉
@@ -21,8 +21,14 @@ public class BraveKnightTest {
 
     @Test
     public void KnigthQuestTest(){
-        Quest quest = new SlayDragonQuest();
-        BraveKnight knight = new BraveKnight(quest);
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("knight/SpringKnight.xml");
+        Knight knight = (Knight) context.getBean("knight");
         knight.embarkOnQuest();
+    }
+
+    public static void main(String[] args){
+        String temp = "com.rocky.shtiian.test";
+        temp = temp.replaceAll("\\.", "/");
+        System.out.println(temp);
     }
 }
