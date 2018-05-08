@@ -26,9 +26,4 @@ public class BraveKnightTest {
         knight.embarkOnQuest();
     }
 
-    public static void main(String[] args){
-        String temp = "com.rocky.shtiian.test";
-        temp = temp.replaceAll("\\.", "/");
-        System.out.println(temp);
-    }
 }
